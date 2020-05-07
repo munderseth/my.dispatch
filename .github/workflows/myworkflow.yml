@@ -10,4 +10,4 @@ jobs:
         run: |
           echo "Workflow  = "${{ github.workflow }}
           echo "Action    = "${{ github.event.action }}
-          echo "Payload   = "${{ github.event.client_payload }}
+          echo "Function  = "${{ toJson(github.event.client_payload.function) }}
