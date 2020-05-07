@@ -1,0 +1,13 @@
+name: myworkflow
+on: 
+  repository_dispatch:
+    types: [testspace]
+jobs:
+  ONE:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: |
+          echo "Workflow  = "${{ github.workflow }}
+          echo "Action    = "${{ github.event.action }}
+          echo "Payload   = "${{ github.event.client_payload }}
