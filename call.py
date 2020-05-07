@@ -13,7 +13,7 @@ headers = {
   }
 
 input = {      
-  "event_type": "testspace1",
+  "event_type": "testspace",
   "client_payload": {"function": "foo", "param1": "tbd"}
 }
 
