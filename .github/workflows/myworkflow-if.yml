@@ -3,7 +3,7 @@ on:
   repository_dispatch:
 jobs:
   ONE:
-    if: github.event.action == "testspace"
+    if: ${{ github.event.action == 'testspace' }}
     runs-on: ubuntu-latest
     steps:
       - name: Echo
