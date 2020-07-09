@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Inputs  = "${{ toJson(github.event.inputs) }}
+        echo "Inputs: ${{ toJson(github.event.inputs) }}"
