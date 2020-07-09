@@ -20,7 +20,7 @@ jobs:
       run: |
         echo "$INPUTS"
     - name: Call Script implementing foo()
-      run: node handler.js "$INPUTS"
       env:
-        INPUTS: ${{ github.event.inputs }}
+        INPUTS: ${{ toJson(github.event.inputs) }}
+      run: node handler.js "$INPUTS"
        
