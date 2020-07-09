@@ -1,10 +1,13 @@
 name: ui_dispatch
 on: 
   workflow_dispatch:
+    inputs:
+      p1:
+        description: 'parameter'
+        required: true
 jobs:
-  printInputs:
-  runs-on: ubuntu-latest
-  steps:
-  - run: |
-      echo "Log level: ${{ github.event.inputs.logLevel }}"
-      echo "Tags: ${{ github.event.inputs.tags }}" 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Inputs  = "${{ toJson(github.event.inputs) }}
