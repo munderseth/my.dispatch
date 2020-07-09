@@ -4,6 +4,8 @@ on:
     inputs:
       p1:
         description: 'parameter'
+      fileinput:
+        description: 'file content as JSON string'
 jobs:
   test:
     runs-on: ubuntu-latest
