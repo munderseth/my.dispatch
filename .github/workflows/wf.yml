@@ -22,5 +22,6 @@ jobs:
     - name: Call Script implementing foo()
       env:
         INPUTS: ${{ toJson(github.event.inputs) }}
-      run: node ./handler.js "$INPUTS"
+      run: |
+        node ./handler.js "$INPUTS"
        
