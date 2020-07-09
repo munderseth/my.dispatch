@@ -1,4 +1,4 @@
-name: ui_dispatch
+name: workflow_dispatch
 on: 
   workflow_dispatch:
     inputs:

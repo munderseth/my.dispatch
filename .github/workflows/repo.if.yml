@@ -1,4 +1,4 @@
-name: myworkflow-if
+name: repo-if
 on: 
   repository_dispatch:
 jobs:

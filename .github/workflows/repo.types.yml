@@ -1,4 +1,4 @@
-name: myworkflow
+name: repo-types
 on: 
   repository_dispatch:
     types: [testspace]

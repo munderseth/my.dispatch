@@ -1,4 +1,4 @@
-name: myworkflow-always
+name: repo-all
 on: 
   repository_dispatch:
 jobs:
