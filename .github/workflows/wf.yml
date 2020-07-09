@@ -4,7 +4,6 @@ on:
     inputs:
       p1:
         description: 'parameter'
-        required: true
 jobs:
   test:
     runs-on: ubuntu-latest

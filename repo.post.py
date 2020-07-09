@@ -3,7 +3,7 @@ import requests
 import os
 import json
 
-url      = "https://api.github.com/repos/munderseth/my.dispatch/dispatches"
+url      = "https://api.github.com/repos/munderseth/my.dispatch/dispatches/"
 GH_TOKEN  = os.getenv('GH_TOKEN')
 
 headers = {
