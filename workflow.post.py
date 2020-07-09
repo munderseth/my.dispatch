@@ -12,14 +12,9 @@ headers = {
   'Authorization': 'Token ' + GH_TOKEN,
 }
 
-data2 = {      
-  "ref": "master",
-  "p1": "testspace",
-  "p2": "foo"
-}
-
-data = {      
-  "event": {"ref": "master"}
+data = {
+  "ref":"master",
+  "inputs": {"p1": "py"} 
 }
 
 def main():

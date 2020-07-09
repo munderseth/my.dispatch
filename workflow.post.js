@@ -6,6 +6,10 @@ var octokit = new Octokit({ auth: token });
 
 var myinput = {"p1": "one", "p2": "two"};
 
+var myinputs = { 
+ p1: "js",
+}
+
 //inputs: JSON.stringify(myinput)
 
 octokit.request('POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches', {
@@ -13,4 +17,5 @@ octokit.request('POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disp
     repo: 'my.dispatch',
     workflow_id: 'wf.yml',
     ref: 'master',
+    inputs: myinputs,
   })
