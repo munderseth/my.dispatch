@@ -1,0 +1,111 @@
+{
+    "repo": {
+        "org": "s2testorg",
+        "name": "testFunctions",
+        "templateOrg": "s2technologies",
+        "templateOrgRepo": "testspace.test.repo",
+        "templateOrgRepoBranch": "test.functions",
+        "issues": [],
+        "cycles": ["cycle1", "cycle2", "cycle3", "fixture"]
+    },
+    "project": {
+        "org": "s2testorg",
+        "user": "testuser",
+        "pass": "testuser"
+    },
+    "sessions": [
+        {
+            "listing": "Manual",
+            "name": "session.new",
+            "suites": [
+                {
+                    "name": ".ONE",
+                    "cases": [
+                        {
+                            "name": "Passed",
+                            "status": "Passed",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Failed",
+                            "status": "Failed",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Blocked",
+                            "status": "Blocked",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Not Applicable",
+                            "status": "Not Applicable",
+                            "defect": false,
+                            "defectRefs": null
+                        }
+                    ]
+                },
+                {
+                    "name": ".TWO",
+                    "cases": [
+                        {
+                            "name": "Passed",
+                            "status": "Passed",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Failed",
+                            "status": "Failed",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Blocked",
+                            "status": "Blocked",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Not Applicable",
+                            "status": "Not Applicable",
+                            "defect": false,
+                            "defectRefs": null
+                        }
+                    ]
+                },
+                {
+                    "name": ".THREE",
+                    "cases": [
+                        {
+                            "name": "Passed",
+                            "status": "Passed",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Failed",
+                            "status": "Failed",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Blocked",
+                            "status": "Blocked",
+                            "defect": false,
+                            "defectRefs": null
+                        },
+                        {
+                            "name": "Not Applicable",
+                            "status": "Not Applicable",
+                            "defect": false,
+                            "defectRefs": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

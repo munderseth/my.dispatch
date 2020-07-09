@@ -5,12 +5,10 @@ var token = process.env.GH_TOKEN;
 
 var octokit = new Octokit({ auth: token });
 
-var myinput = {"p1": "one", "p2": "two"};
-var myinputJSON = JSON.stringify(myinput);
-
+// Converting to Obj, then back to String cleans up the - \r\n and spaces
 var myinputs = { 
  p1: "js",
- fileinput: myinputJSON
+ fileinput: JSON.stringify(JSON.parse(fs.readFileSync('test.json', 'utf8')))
 }
 
 //inputs: JSON.stringify(myinput)
