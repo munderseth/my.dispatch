@@ -1,0 +1,21 @@
+name: Template
+on: 
+  workflow_dispatch:
+    inputs:
+      p1:
+        description: 'parameter one'
+        required: true
+        default: 'on yeah'
+      p2:
+        description: 'parmeter two'
+        required: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Dump GitHub context
+       env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+   
+       
