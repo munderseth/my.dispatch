@@ -15,5 +15,7 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
     - name: Dump Inputs
+      env:
+        INPUTS: ${{ toJson(github.event.inputs) }}
       run: |
-        echo ${{ toJson(github.event.inputs) }}"
+        echo "$INPUTS"
