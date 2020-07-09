@@ -1,4 +1,4 @@
-name: workflow_dispatch
+name: myworkflow
 on: 
   workflow_dispatch:
     inputs:

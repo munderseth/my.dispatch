@@ -3,13 +3,13 @@ import requests
 import os
 import json
 
-url      = "https://api.github.com/repos/munderseth/my.dispatch/dispatches/"
+url      = "https://api.github.com/repos/munderseth/my.dispatch/dispatches"
 GH_TOKEN  = os.getenv('GH_TOKEN')
 
 headers = {
     'Content-Type': "application/json",
     'Accept': "application/vnd.github.everest-preview+json",
-     'Authorization': 'Token ' + GH_TOKEN,
+    'Authorization': 'Token ' + GH_TOKEN,
   }
 
 input = {      

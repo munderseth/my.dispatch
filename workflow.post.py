@@ -12,20 +12,19 @@ headers = {
   'Authorization': 'Token ' + GH_TOKEN,
 }
 
-inputs = {      
+data2 = {      
   "ref": "master",
   "p1": "testspace",
   "p2": "foo"
 }
 
-inputs2 = {      
-  "ref": "master"
+data = {      
+  "event": {"ref": "master"}
 }
 
 def main():
-  global inputs
-
-  payload = json.dumps(inputs2)
+ 
+  payload = json.dumps(data)
   print(payload)
   
   response = requests.request("POST", url, data=payload, headers=headers)
