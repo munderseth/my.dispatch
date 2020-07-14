@@ -6,6 +6,8 @@ on:
         description: 'parameter'
       fileinput:
         description: 'file content as JSON string'
+      p1NEW:
+        description: 'parameter'
 jobs:
   test:
     runs-on: ubuntu-latest
