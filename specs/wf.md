@@ -5,6 +5,7 @@ before:
   input:
     p1: one
     p2: two
+    filepath: "./"
 ---
 
 # Spec1
