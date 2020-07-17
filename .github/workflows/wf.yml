@@ -4,9 +4,9 @@ on:
     inputs:
       p1:
       p2:
-      filepath:
+      file:
         required: true
-        default: "./specs"
+        default: "./specs/input.json"
 jobs:
   test:
     runs-on: ubuntu-latest

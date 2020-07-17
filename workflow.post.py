@@ -3,6 +3,8 @@ import requests
 import os
 import json
 
+BRANCH="master"
+
 url      = "https://api.github.com/repos/munderseth/my.dispatch/actions/workflows/wf.yml/dispatches"
 GH_TOKEN  = os.getenv('GH_TOKEN')
 
@@ -13,7 +15,7 @@ headers = {
 }
 
 data = {
-  "ref":"specs",
+  "ref": BRANCH,
   "inputs": {"p1": "py"} 
 }
 
