@@ -4,7 +4,7 @@ before:
   description: example input
   input:
     p1: one
-    fileinput: two
+    p2: two
 ---
 
 # Spec1
