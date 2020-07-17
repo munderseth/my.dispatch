@@ -3,9 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       p1:
-        description: 'parameter'
-      fileinput:
-        description: 'file content as JSON string'
+      p2:
+      file:
+        required: true
+        default: "./specs/input.json"
 jobs:
   test:
     runs-on: ubuntu-latest
