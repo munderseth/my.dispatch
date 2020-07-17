@@ -13,7 +13,7 @@ headers = {
 }
 
 data = {
-  "ref":"master",
+  "ref":"specs",
   "inputs": {"p1": "py"} 
 }
 
