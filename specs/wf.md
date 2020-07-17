@@ -5,7 +5,6 @@ before:
   input:
     p1: one
     fileinput: two
-    p1NEW: three
 ---
 
 # Spec1
