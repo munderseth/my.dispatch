@@ -7,7 +7,7 @@ function handler(inputs) {
     console.log("p1:", inputs.p1);
     console.log("p2:", inputs.p2);
     console.log("filepath:", inputs.file);
-    input = JSON.parse(fs.readFileSync('inputs.file', 'utf8'));
+    input = JSON.parse(fs.readFileSync(inputs.file, 'utf8'));
     console.debug("inputfile:", input);
 }
 
