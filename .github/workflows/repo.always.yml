@@ -8,6 +8,7 @@ jobs:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: Echo Workflow and Action
         run: |
           echo "Workflow  = "${{ github.workflow }}
