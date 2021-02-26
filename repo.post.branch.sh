@@ -22,7 +22,7 @@ curl -X POST $URL2 \
 
 # Sleep until ?
 echo Sleep ..
-sleep 10
+#sleep 10
 echo Done with Sleep
 
 # Set "master" back to default
