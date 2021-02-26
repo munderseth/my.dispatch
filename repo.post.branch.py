@@ -4,13 +4,12 @@ import os
 import json
 import time
 
-REPO = "test"
-BRANCH = "b1"
-WF = "test.yml"
+REPO    = "my.dispatch"
+DEFAULT = "master"
+BRANCH  = "the.branch"
 
 url    = "https://api.github.com/repos/munderseth/"+REPO
 url2   = "https://api.github.com/repos/munderseth/"+REPO+"/dispatches"
-url3   = "https://api.github.com/repos/munderseth/"+REPO+"/actions/workflows/"+WF+"/runs"
 
 GH_TOKEN  = os.getenv('GH_TOKEN')
 
@@ -20,41 +19,47 @@ headers = {
     'Authorization': 'Token ' + GH_TOKEN,
   }
 
+def main():
+  global input
+
+################################################
+# SET default = BRANCH
+################################################
+
 input = {'default_branch' : BRANCH}
 newbranch = json.dumps(input)
 response = requests.request("PATCH", url, data=newbranch, headers=headers)
+print(response.status_code)
+
+###############################################
+# DELAY ..
+###############################################
+
+SEC=1
+print("sleep ..", SEC)
+#time.sleep(SEC)
+
+################################################
+# POST REPO DISPATCH
+################################################
 
 input2 = {      
   "event_type": "testspace",
   "client_payload": {"function": "foo", "param1": "tbd"}
 }
 
-def main():
-  global input
-
-
-input = {'default_branch' : BRANCH}
-newbranch = json.dumps(input)
-response = requests.request("PATCH", url, data=newbranch, headers=headers)
-print(response.status_code)
-
 payload = json.dumps(input2)
-# print(payload)
-  
 response = requests.request("POST", url2, data=payload, headers=headers)
 print(response.status_code)
 
-input = {'default_branch' : "master"}
-newbranch = json.dumps(input)
-response = requests.request("PATCH", url, data=newbranch, headers=headers)
-print(response.status_code)
+################################################
+# SET default = master/main
+################################################
 
-time.sleep(10)
-
-response = requests.request("GET", url3, headers=headers)
-print(response.status_code)
-data = response.json()
-print(data)
+#input = {'default_branch' : DEFAULT}
+#newbranch = json.dumps(input)
+#response = requests.request("PATCH", url, data=newbranch, headers=headers)
+#print(response.status_code)
 
 if __name__ == "__main__":  # pragma: no cover
     main()
