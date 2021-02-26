@@ -9,7 +9,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - name: Echo Workflow and Action
+      - name: Echo Workflow, Action, and Function
         run: |
           echo "Workflow  = "${{ github.workflow }}
           echo "Action    = "${{ github.event.action }}

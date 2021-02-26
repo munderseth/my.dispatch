@@ -4,13 +4,12 @@ import os
 import json
 import time
 
-REPO = "test"
-BRANCH = "b1"
-WF = "test.yml"
+REPO = "my.dispatch"
+DEFAULT = "master"
+BRANCH = "the.branch"
 
 url    = "https://api.github.com/repos/munderseth/"+REPO
 url2   = "https://api.github.com/repos/munderseth/"+REPO+"/dispatches"
-url3   = "https://api.github.com/repos/munderseth/"+REPO+"/actions/workflows/"+WF+"/runs"
 
 GH_TOKEN  = os.getenv('GH_TOKEN')
 
@@ -32,29 +31,18 @@ input2 = {
 def main():
   global input
 
-
-input = {'default_branch' : BRANCH}
+input = {'default_branch' : DEFAULT}
 newbranch = json.dumps(input)
 response = requests.request("PATCH", url, data=newbranch, headers=headers)
 print(response.status_code)
+
+SEC=1
+print("sleep ..", SEC)
+time.sleep(SEC)
 
 payload = json.dumps(input2)
-# print(payload)
-  
 response = requests.request("POST", url2, data=payload, headers=headers)
 print(response.status_code)
-
-input = {'default_branch' : "master"}
-newbranch = json.dumps(input)
-response = requests.request("PATCH", url, data=newbranch, headers=headers)
-print(response.status_code)
-
-time.sleep(10)
-
-response = requests.request("GET", url3, headers=headers)
-print(response.status_code)
-data = response.json()
-print(data)
 
 if __name__ == "__main__":  # pragma: no cover
     main()
