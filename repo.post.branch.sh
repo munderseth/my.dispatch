@@ -7,7 +7,7 @@ curl -X PATCH $URL1 \
 -H 'Accept: application/vnd.github.v3+json' \
 -H "Authorization: token $GH_TOKEN" \
 -d '{
-     "default_branch": "the.branch"
+     "default_branch": "master"
     }'
 
 # Post Repository Dispatch
