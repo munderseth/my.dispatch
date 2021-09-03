@@ -1,5 +1,15 @@
 # my.dispatch
-Sandbox for dispatch
+Sandbox for dispatch testing. 
+
+## Setup
+
+The `GH_TOKEN` environement variable is required. 
+
+The python scripts require:
+```
+python -m pip install requests
+```
+
 
 ## References
 

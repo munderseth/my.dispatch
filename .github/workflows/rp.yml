@@ -1,0 +1,17 @@
+name: repo
+on: 
+  repository_dispatch:
+    types: [rp]
+jobs:
+  ONE:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Echo Workflow, Action, and Function
+        run: |
+          echo "Workflow  = "${{ github.workflow }}
+          echo "Action    = "${{ github.event.action }}
+          echo "Function  = "${{ toJson(github.event.client_payload.function) }}

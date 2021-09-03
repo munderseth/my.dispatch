@@ -35,9 +35,9 @@ print(response.status_code)
 # DELAY ..
 ###############################################
 
-SEC=1
-print("sleep ..", SEC)
-#time.sleep(SEC)
+SEC=0
+print("sleep after branch poked..", SEC)
+time.sleep(SEC)
 
 ################################################
 # POST REPO DISPATCH
@@ -52,14 +52,22 @@ payload = json.dumps(input2)
 response = requests.request("POST", url2, data=payload, headers=headers)
 print(response.status_code)
 
+###############################################
+# DELAY ..
+###############################################
+
+SEC=3
+print("sleep after branch poked..", SEC)
+time.sleep(SEC)
+
 ################################################
 # SET default = master/main
 ################################################
 
-#input = {'default_branch' : DEFAULT}
-#newbranch = json.dumps(input)
-#response = requests.request("PATCH", url, data=newbranch, headers=headers)
-#print(response.status_code)
+input = {'default_branch' : DEFAULT}
+newbranch = json.dumps(input)
+response = requests.request("PATCH", url, data=newbranch, headers=headers)
+print(response.status_code)
 
 if __name__ == "__main__":  # pragma: no cover
     main()

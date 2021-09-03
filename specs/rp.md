@@ -1,6 +1,6 @@
 ---
 before:
-  name: github::wf
+  name: github::rp
   description: example input
   input:
     p1: one
