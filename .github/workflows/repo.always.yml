@@ -13,4 +13,6 @@ jobs:
         run: |
           echo "Workflow  = "${{ github.workflow }}
           echo "Action    = "${{ github.event.action }}
-          echo "Function  = "${{ toJson(github.event.client_payload) }}
+           echo "Payload   = "$PAYLOAD"
+        env: 
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
