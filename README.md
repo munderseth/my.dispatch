@@ -10,11 +10,15 @@ Sandbox for dispatch testing.
 
 - Examples running via GitHub CLI (`wf.yml`):
   ```
-  gh workflow run myworkflow
+  gh workflow run my-workflow -f p1=Whatever -F p2=@./specs/input.json
   gh workflow run wf.yml (same as above)
   gh workflow run myworkflow --ref the.branch
   ```
 
+  ```
+  gh run watch
+  ```
+  
 ## Repository Dispatch
 
 - Requires toggling the default branch 

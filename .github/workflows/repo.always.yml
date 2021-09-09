@@ -1,4 +1,4 @@
-name: repo-all
+name: repo-always
 on: 
   repository_dispatch:
 jobs:
@@ -9,8 +9,8 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - name: Echo Workflow, Action, and Function
+      - name: Echo Workflow, Action, and Client Payload
         run: |
           echo "Workflow  = "${{ github.workflow }}
           echo "Action    = "${{ github.event.action }}
-          echo "Function  = "${{ toJson(github.event.client_payload.function) }}
+          echo "Function  = "${{ toJson(github.event.client_payload) }}

@@ -1,4 +1,4 @@
-name: Template
+name: Workflow.Template
 on: 
   workflow_dispatch:
     inputs:
