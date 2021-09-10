@@ -8,7 +8,8 @@ Sandbox for dispatch testing.
 - The `Workflow` dispatch requires the workflow **file** to be in the default branch to run. 
   - Thus, requires committing a new yml to the default branch (`main`) to enable running & changing in the branch
 
-- Examples running via GitHub CLI (`wf.yml`):
+- Examples running via GitHub CLI using `name`, or `file.yml` with extension):
+
   ```
   gh workflow run my-workflow -f p1=Whatever -F p2=@./specs/input.json
   gh workflow run wf.yml (same as above)

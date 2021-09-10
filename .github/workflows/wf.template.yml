@@ -17,5 +17,9 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-   
+      - name: Annotation output
+        run: |
+          echo "::debug::My debug info"
+          echo "::warning ::My warning info"
+          echo "::error ::My error info"
        

@@ -1,0 +1,42 @@
+name: Manual
+on:
+  workflow_dispatch:
+    inputs:
+      p1:
+        default: "this"
+      p2: 
+        default: "that"
+      outputfile:
+        default: 'outputfile-test.ini'
+      artifact:
+        default: 'artifact-test'
+      _context:
+        required: false
+jobs:
+  Upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate Output 
+        shell: bash
+        run: |
+          echo "p1=${{ github.event.inputs.p1 }}" >  ${{ github.event.inputs.outputfile }}
+          echo "p2=${{ github.event.inputs.p2 }}" >> ${{ github.event.inputs.outputfile }}
+      - name: Write Output
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.event.inputs.artifact }}
+          path: ${{ github.event.inputs.outputfile }}
+  Download:
+    needs: Upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read Output
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ github.event.inputs.artifact }}
+      - name: Print output
+        shell: bash
+        run: |
+          value=`cat ${{ github.event.inputs.outputfile }}`
+          echo The result is $value
